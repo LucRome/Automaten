@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2020-10-17T14:22:39.366Z" agent="5.0 (Windows)" etag="TfzkRP2jGxoxOkKF0oyu" version="13.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-17T14:43:34.768Z" agent="5.0 (Windows)" etag="ClWbUojCEBiV0J0vvOEL" version="13.8.0" type="github">
   <diagram id="hKwI_qq-BkaKODop3UoJ" name="Page-1">
-    <mxGraphModel dx="2062" dy="1152" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="785" dy="1104" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <UserObject label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px; color: rgb(51, 51, 51);&quot;&gt;Deklarationen:&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px; color: rgb(51, 51, 51);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;all [A-Za-z0-9_$...] (einfach alles)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;id_start [A-Za-z_]&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;id_end [A-Za-z0-9_]&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;fin [,;: ] (mit space)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;rest : alle Symbole die v on einem Zustand noch nicht zu einem anderen führen (für Fehlerzustand) (-&amp;gt; else)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" lucidchartObjectId="vxwF~iOpNAWM" id="QoE0W4-9HsHGrPBsAOWZ-2">
+        <UserObject label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: rgb(51 , 51 , 51)&quot;&gt;Deklarationen:&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: rgb(51 , 51 , 51)&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;all [A-Za-z0-9_$...] (einfach alles)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;id_start [A-Za-z_]&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;id_end [A-Za-z0-9_]&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;fin [,;: Fileend] (mit space)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 13px ; color: #333333&quot;&gt;rest : alle Symbole die v on einem Zustand noch nicht zu einem anderen führen (für Fehlerzustand) (-&amp;gt; else)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" lucidchartObjectId="vxwF~iOpNAWM" id="QoE0W4-9HsHGrPBsAOWZ-2">
           <mxCell style="html=1;whiteSpace=wrap;;whiteSpace=wrap;spacing=3;verticalAlign=middle;strokeColor=#5e5e5e;strokeOpacity=100;absoluteArcSize=1;arcSize=7.199999999999999;strokeWidth=2;fontStyle=1" vertex="1" zOrder="3" parent="1">
             <mxGeometry x="288" y="21" width="264" height="150" as="geometry" />
           </mxCell>
@@ -14,6 +14,11 @@
             <mxGeometry x="48" y="30" width="216" height="184" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="QoE0W4-9HsHGrPBsAOWZ-167" value="Fileend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QoE0W4-9HsHGrPBsAOWZ-4" target="QoE0W4-9HsHGrPBsAOWZ-166">
+          <mxGeometry x="0.8584" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <UserObject label="0" lucidchartObjectId="dCwFsfaFbBil" id="QoE0W4-9HsHGrPBsAOWZ-4">
           <mxCell style="html=1;whiteSpace=wrap;ellipse;whiteSpace=wrap;fontSize=13;fontColor=#333333;align=center;spacing=3;strokeColor=#5e5e5e;strokeOpacity=100;absoluteArcSize=1;arcSize=7.199999999999999;strokeWidth=2;fontStyle=1;" vertex="1" zOrder="5" parent="1">
             <mxGeometry x="132" y="516" width="48" height="48" as="geometry" />
@@ -215,9 +220,9 @@
             <mxGeometry x="1032" y="52" width="96" height="72" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Error" lucidchartObjectId="SWIFL_oTE37." id="QoE0W4-9HsHGrPBsAOWZ-39">
+        <UserObject label="ERROR" lucidchartObjectId="SWIFL_oTE37." id="QoE0W4-9HsHGrPBsAOWZ-39">
           <mxCell style="html=1;whiteSpace=wrap;shape=display;whiteSpace=wrap;fontSize=13;fontColor=#333333;align=center;spacing=3;strokeColor=#5e5e5e;strokeOpacity=100;absoluteArcSize=1;arcSize=7.199999999999999;strokeWidth=2;fontStyle=1;" vertex="1" zOrder="29" parent="1">
-            <mxGeometry x="450" y="1222" width="48" height="36" as="geometry" />
+            <mxGeometry x="450" y="1222" width="60" height="36" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" lucidchartObjectId="9WIF0CPT1vpk" id="QoE0W4-9HsHGrPBsAOWZ-40">
@@ -741,6 +746,19 @@
         <mxCell id="QoE0W4-9HsHGrPBsAOWZ-154" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;fontColor=#FF0000;rotation=90;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="560.05" y="442" width="26" height="373" as="geometry" />
         </mxCell>
+        <mxCell id="QoE0W4-9HsHGrPBsAOWZ-170" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontColor=#000000;" edge="1" parent="1" source="QoE0W4-9HsHGrPBsAOWZ-166" target="QoE0W4-9HsHGrPBsAOWZ-169">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="37" lucidchartObjectId="dCwFsfaFbBil" id="QoE0W4-9HsHGrPBsAOWZ-166">
+          <mxCell style="html=1;whiteSpace=wrap;ellipse;whiteSpace=wrap;fontSize=13;fontColor=#333333;align=center;spacing=3;strokeColor=#5e5e5e;strokeOpacity=100;absoluteArcSize=1;arcSize=7.199999999999999;strokeWidth=2;fontStyle=1;" vertex="1" zOrder="5" parent="1">
+            <mxGeometry x="132" y="1270" width="48" height="48" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="FINISH" lucidchartObjectId="SWIFL_oTE37." id="QoE0W4-9HsHGrPBsAOWZ-169">
+          <mxCell style="html=1;whiteSpace=wrap;shape=display;whiteSpace=wrap;fontSize=13;fontColor=#333333;align=center;spacing=3;strokeColor=#5e5e5e;strokeOpacity=100;absoluteArcSize=1;arcSize=7.199999999999999;strokeWidth=2;fontStyle=1;" vertex="1" zOrder="29" parent="1">
+            <mxGeometry x="220" y="1276" width="60" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
       </root>
     </mxGraphModel>
   </diagram>
