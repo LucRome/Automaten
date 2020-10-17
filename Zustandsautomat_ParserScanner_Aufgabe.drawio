@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-10-17T16:06:34.800Z" agent="5.0 (Windows)" etag="UjAiSNC3euyR2F-rejnN" version="13.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-17T16:54:37.053Z" agent="5.0 (Windows)" etag="eM1isEDX9ZpQm_FegZQ4" version="13.8.0" type="github">
   <diagram id="hKwI_qq-BkaKODop3UoJ" name="Page-1">
-    <mxGraphModel dx="1021" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1119" dy="1151" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -14,7 +14,7 @@
             <mxGeometry x="48" y="30" width="216" height="184" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="QoE0W4-9HsHGrPBsAOWZ-167" value="Fileend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QoE0W4-9HsHGrPBsAOWZ-4" target="QoE0W4-9HsHGrPBsAOWZ-166">
+        <mxCell id="QoE0W4-9HsHGrPBsAOWZ-167" value="Fileend (nicht in Programm, wird früher abgefangen)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QoE0W4-9HsHGrPBsAOWZ-4" target="QoE0W4-9HsHGrPBsAOWZ-166">
           <mxGeometry x="0.8584" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -581,7 +581,7 @@
             <mxGeometry x="926.05" y="242.87" width="48" height="48" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="INITIAL" lucidchartObjectId="12IFsLz4tC5U" id="QoE0W4-9HsHGrPBsAOWZ-124">
+        <UserObject label="EVENT" lucidchartObjectId="12IFsLz4tC5U" id="QoE0W4-9HsHGrPBsAOWZ-124">
           <mxCell style="html=1;whiteSpace=wrap;shape=display;whiteSpace=wrap;fontSize=13;fontColor=#333333;align=center;spacing=3;strokeColor=#5e5e5e;strokeOpacity=100;absoluteArcSize=1;arcSize=7.199999999999999;strokeWidth=2;fontStyle=1;" vertex="1" zOrder="56" parent="1">
             <mxGeometry x="989.05" y="248.87" width="78" height="36" as="geometry" />
           </mxCell>
@@ -769,6 +769,9 @@
             <mxPoint x="708" y="900" as="sourcePoint" />
             <mxPoint x="740" y="880" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="QoE0W4-9HsHGrPBsAOWZ-173" value="(EOF Wird nicht beachtet, da kein korrektes Programm) " style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="732" y="920" width="208" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
