@@ -1,0 +1,3 @@
+#pragma once
+
+enum Terminals {EVENT, IN, INITIAL, STATE, ON, GOTO, COMMA, SEMICOLON, COLON, ID, ERROR, FINISH};
