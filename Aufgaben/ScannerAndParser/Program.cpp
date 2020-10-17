@@ -1,7 +1,11 @@
 #include "Scanner.h"
 #include <string>
+#include <iostream>
+#include "ConsolePrinter.h"
 
 int main(std::string args[]) { //Später: Pfad aus args[]
-	std::string path = "C:\\Users\\Luca\\Documents\\GitHub\\Automaten\\Aufgaben\\ScannerAndParser\\Test.txt";
+	std::string path = "Test.txt";
 	Scanner scanner = Scanner(path);
+	ConsolePrinter printer;
+	printer.printLexeme(scanner.getTokens());
 }

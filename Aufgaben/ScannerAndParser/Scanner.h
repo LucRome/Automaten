@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <queue>
-#include <fstream>
+#include "File.h"
 #include "Tokenstruct.h"
 
 class Scanner
@@ -10,9 +10,9 @@ public:
 	Scanner(std::string filepath);
 	Token getNextToken();
 	Token readNextToken() const;
+	std::queue<Token> getTokens();
 	
 private:
-	char getNextChar();
 	bool scan();
 	bool scan_nextLexem();
 	int eval(int state); //auﬂer Endstates
@@ -25,8 +25,7 @@ private:
 	bool is_fin(char c);
 
 
-	std::fstream file;
-	const std::string m_filepath;
+	File m_file;
 	std::queue<Token> m_tokens = std::queue<Token>();
 	bool m_scanSuccessfull;
 

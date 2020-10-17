@@ -139,19 +139,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConsolePrinter.cpp" />
+    <ClCompile Include="File.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Scanner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConsolePrinter.h" />
+    <ClInclude Include="File.h" />
     <ClInclude Include="Scanner.h" />
     <ClInclude Include="TerminalsEnum.h" />
     <ClInclude Include="Tokenstruct.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Test.txt" />
+    <None Include="..\..\.gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\.gitignore" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

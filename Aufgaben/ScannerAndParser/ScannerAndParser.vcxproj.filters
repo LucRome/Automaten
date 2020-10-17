@@ -21,6 +21,12 @@
     <ClCompile Include="Program.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsolePrinter.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scanner.h">
@@ -32,13 +38,17 @@
     <ClInclude Include="TerminalsEnum.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Test.txt">
-      <Filter>Ressourcendateien</Filter>
-    </Text>
+    <ClInclude Include="File.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsolePrinter.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt" />
   </ItemGroup>
 </Project>
