@@ -29,18 +29,18 @@ bool Scanner::scan()
 	bool success;
 	//queue solange auffüllen, bis Datei zuende
 	do{
-		success = oneScan();
+		success = scan_nextLexem();
 	} while (file.gcount() > 0 && success);
 
 	m_scanSuccessfull = success;
 }
 
-bool Scanner::oneScan()
+bool Scanner::scan_nextLexem()
 {
-	bool finished = false;
+	bool success = true;
 	//Zustandsautomat (Endzustände mit Return: hier)
 	int step = 0;
-	while (file.gcount() > 0) {
+	while (file.gcount() > 0 && success) {
 		switch (step)
 		{
 			//Endzustände
@@ -98,11 +98,13 @@ bool Scanner::oneScan()
 			m_tokens.push({ Terminals::ERROR, "" });
 			m_name = "";
 			step = 0;
+			success == false;
 			break;
 		default:
 			eval(step);
 		}
 	}
+	return success;
 }
 
 int Scanner::eval(int state)

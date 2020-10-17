@@ -14,7 +14,7 @@ public:
 private:
 	char getNextChar();
 	bool scan();
-	bool oneScan();
+	bool scan_nextLexem();
 	int eval(int state); //auﬂer Endstates
 
 	int StandardAlternatives(char c);
