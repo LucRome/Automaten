@@ -141,12 +141,15 @@
   <ItemGroup>
     <ClCompile Include="ConsolePrinter.cpp" />
     <ClCompile Include="File.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Scanner.cpp" />
+    <ClCompile Include="Tokenstruct.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsolePrinter.h" />
     <ClInclude Include="File.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="Scanner.h" />
     <ClInclude Include="TerminalsEnum.h" />
     <ClInclude Include="Tokenstruct.h" />

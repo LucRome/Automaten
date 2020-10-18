@@ -206,6 +206,7 @@ int Scanner::eval(int state)
 	case 20:
 		if (is_fin(nxt)) { nxt_state = 21; }
 		else { nxt_state = StandardAlternatives(nxt); }
+		break;
 	case 22:
 		if (nxt == 'n') { nxt_state = 23; }
 		else { nxt_state = StandardAlternatives(nxt); }
