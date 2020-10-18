@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-18T19:42:57.712Z" agent="5.0 (Windows)" etag="4TSjuKtbdndGca2u9FoS" version="13.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-18T19:55:07.967Z" agent="5.0 (Windows)" etag="7VOoUL92XhhuIF88LB_5" version="13.8.0" type="github">
   <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
     <mxGraphModel dx="1021" dy="1151" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
@@ -12,8 +12,11 @@
         <mxCell id="LNcLyEtPPPjx2cFFu8yj-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="LNcLyEtPPPjx2cFFu8yj-18" target="LNcLyEtPPPjx2cFFu8yj-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="LNcLyEtPPPjx2cFFu8yj-18" value="enum Terminals&lt;br&gt;(enthält auch ERROR &lt;br&gt;und FINISH)" style="html=1;" parent="1" vertex="1">
-          <mxGeometry x="1275" y="54" width="130" height="90" as="geometry" />
+        <mxCell id="bejTTtgLJYXNNboedkVA-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LNcLyEtPPPjx2cFFu8yj-18" target="bejTTtgLJYXNNboedkVA-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LNcLyEtPPPjx2cFFu8yj-18" value="enum ParserAlphabet&lt;br&gt;&lt;br&gt;&lt;i&gt;Terminale:auch Teil &lt;br&gt;des Alphabets&lt;br&gt;&lt;/i&gt;" style="html=1;" parent="1" vertex="1">
+          <mxGeometry x="1300" y="130" width="130" height="90" as="geometry" />
         </mxCell>
         <mxCell id="LNcLyEtPPPjx2cFFu8yj-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.01;entryY=-0.077;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="LNcLyEtPPPjx2cFFu8yj-20" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -75,42 +78,56 @@
         <mxCell id="LNcLyEtPPPjx2cFFu8yj-14" value="Token" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="1040" y="27" width="140" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="LNcLyEtPPPjx2cFFu8yj-15" value="+ type:Terminals" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="LNcLyEtPPPjx2cFFu8yj-14" vertex="1">
+        <mxCell id="LNcLyEtPPPjx2cFFu8yj-15" value="+ type:ParserAlphabet" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="LNcLyEtPPPjx2cFFu8yj-14" vertex="1">
           <mxGeometry y="26" width="140" height="26" as="geometry" />
         </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-6" value="+ name: std::string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="LNcLyEtPPPjx2cFFu8yj-14">
           <mxGeometry y="52" width="140" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.037;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-8" target="bejTTtgLJYXNNboedkVA-14">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1170" y="445" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-8" value="&lt;div&gt;enum ParserAlphabet&lt;/div&gt;" style="html=1;" vertex="1" parent="1">
-          <mxGeometry x="1290" y="400" width="130" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-10" target="bejTTtgLJYXNNboedkVA-13">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1070" y="400" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-10" value="KnotOrToken&#xa;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="990" y="220" width="240" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-11" value="+ KnotOrToken(Knot&amp;)&#xa;+ KnotOrToken(Token&amp;)&#xa;+ getNext(): Knot&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-10">
-          <mxGeometry y="30" width="240" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-13" value="Knoten" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="970" y="420" width="190" height="190" as="geometry" />
+          <mxGeometry x="970" y="420" width="230" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-14" value="- m_type: ParserAlphabet&#xa;- m_sons: std::queue&lt;Knoten&gt;&#xa;- m_tokens: std::queue&lt;Token&gt;&#xa;- m_nxtType: std::queue&lt;&#xa; " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
-          <mxGeometry y="26" width="190" height="74" as="geometry" />
+        <mxCell id="bejTTtgLJYXNNboedkVA-14" value="- m_type: ParserAlphabet&#xa;- m_sons: std::queue&lt;Knoten&gt;&#xa;- m_tokens: std::queue&lt;Token&gt;&#xa;- m_nxtType: std::queue&lt;ParserToken&gt;&#xa; " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
+          <mxGeometry y="26" width="230" height="74" as="geometry" />
         </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
-          <mxGeometry y="100" width="190" height="10" as="geometry" />
+          <mxGeometry y="100" width="230" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-16" value="+ Knoten(Type)&#xa;+ push(Knotsons): void&#xa;+ getNextSon(): Knotson&lt;&gt;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
-          <mxGeometry y="110" width="190" height="80" as="geometry" />
+        <mxCell id="bejTTtgLJYXNNboedkVA-16" value="+ Knoten(Type)&#xa;+ push(Knoten): void&#xa;+ push(Token): void&#xa;+ peekNext_type(): ParserToken&amp;&#xa;+ peekNext_son(): Knoten&amp;&#xa;+ peekNext_token(): Token&amp;&#xa;+ getNext_type(): ParserToken&#xa;+ getNext_son(): Knoten&#xa;+ getNext_token(): Token&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
+          <mxGeometry y="110" width="230" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-17" target="bejTTtgLJYXNNboedkVA-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-17" value="&lt;div&gt;enum Sort&lt;br&gt;&lt;/div&gt;" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="510" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-23" value="Tree" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="400" width="230" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-24" value="- m_start: Knoten&#xa; " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-23">
+          <mxGeometry y="26" width="230" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-23">
+          <mxGeometry y="100" width="230" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-26" value="+ insort(): &#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-23">
+          <mxGeometry y="110" width="230" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.478;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-27" target="bejTTtgLJYXNNboedkVA-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-27" value="KnotenAndEbene" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="790" width="140" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-28" value="+ type:ParserAlphabet" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-27">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-29" value="+ name: std::tring&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-27">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-32" value="+ebene: int&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-27">
+          <mxGeometry y="78" width="140" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
