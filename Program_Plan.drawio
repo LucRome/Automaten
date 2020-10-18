@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-18T19:55:07.967Z" agent="5.0 (Windows)" etag="7VOoUL92XhhuIF88LB_5" version="13.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-18T20:26:08.753Z" agent="5.0 (Windows)" etag="EXx10r3VbaEO60G-p5HO" version="13.8.0" type="github">
   <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
     <mxGraphModel dx="1021" dy="1151" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
@@ -9,14 +9,11 @@
             <mxRectangle x="320" y="40" width="70" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="LNcLyEtPPPjx2cFFu8yj-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="LNcLyEtPPPjx2cFFu8yj-18" target="LNcLyEtPPPjx2cFFu8yj-14" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LNcLyEtPPPjx2cFFu8yj-18" target="bejTTtgLJYXNNboedkVA-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LNcLyEtPPPjx2cFFu8yj-18" value="enum ParserAlphabet&lt;br&gt;&lt;br&gt;&lt;i&gt;Terminale:auch Teil &lt;br&gt;des Alphabets&lt;br&gt;&lt;/i&gt;" style="html=1;" parent="1" vertex="1">
-          <mxGeometry x="1300" y="130" width="130" height="90" as="geometry" />
+          <mxGeometry x="1290" y="220" width="130" height="90" as="geometry" />
         </mxCell>
         <mxCell id="LNcLyEtPPPjx2cFFu8yj-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.01;entryY=-0.077;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="LNcLyEtPPPjx2cFFu8yj-20" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -84,23 +81,17 @@
         <mxCell id="bejTTtgLJYXNNboedkVA-6" value="+ name: std::string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="LNcLyEtPPPjx2cFFu8yj-14">
           <mxGeometry y="52" width="140" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-13" value="Knoten" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="970" y="420" width="230" height="260" as="geometry" />
-        </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-14" value="- m_type: ParserAlphabet&#xa;- m_sons: std::queue&lt;Knoten&gt;&#xa;- m_tokens: std::queue&lt;Token&gt;&#xa;- m_nxtType: std::queue&lt;ParserToken&gt;&#xa; " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
-          <mxGeometry y="26" width="230" height="74" as="geometry" />
-        </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
-          <mxGeometry y="100" width="230" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-16" value="+ Knoten(Type)&#xa;+ push(Knoten): void&#xa;+ push(Token): void&#xa;+ peekNext_type(): ParserToken&amp;&#xa;+ peekNext_son(): Knoten&amp;&#xa;+ peekNext_token(): Token&amp;&#xa;+ getNext_type(): ParserToken&#xa;+ getNext_son(): Knoten&#xa;+ getNext_token(): Token&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
-          <mxGeometry y="110" width="230" height="150" as="geometry" />
+        <mxCell id="bejTTtgLJYXNNboedkVA-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.923;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-13" target="bejTTtgLJYXNNboedkVA-28">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-17" target="bejTTtgLJYXNNboedkVA-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-17" value="&lt;div&gt;enum Sort&lt;br&gt;&lt;/div&gt;" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="1290" y="510" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-23" target="LNcLyEtPPPjx2cFFu8yj-28">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-23" value="Tree" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
           <mxGeometry x="680" y="400" width="230" height="260" as="geometry" />
@@ -111,7 +102,7 @@
         <mxCell id="bejTTtgLJYXNNboedkVA-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-23">
           <mxGeometry y="100" width="230" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-26" value="+ insort(): &#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-23">
+        <mxCell id="bejTTtgLJYXNNboedkVA-26" value="+ insort(): std::queue&lt;KnotenAndEbene&gt; &#xa;+ getStart(): Knoten&amp;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-23">
           <mxGeometry y="110" width="230" height="150" as="geometry" />
         </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.478;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-27" target="bejTTtgLJYXNNboedkVA-26">
@@ -120,7 +111,7 @@
         <mxCell id="bejTTtgLJYXNNboedkVA-27" value="KnotenAndEbene" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
           <mxGeometry x="720" y="790" width="140" height="104" as="geometry" />
         </mxCell>
-        <mxCell id="bejTTtgLJYXNNboedkVA-28" value="+ type:ParserAlphabet" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-27">
+        <mxCell id="bejTTtgLJYXNNboedkVA-28" value="+ type: Alphabet" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-27">
           <mxGeometry y="26" width="140" height="26" as="geometry" />
         </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-29" value="+ name: std::tring&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-27">
@@ -128,6 +119,27 @@
         </mxCell>
         <mxCell id="bejTTtgLJYXNNboedkVA-32" value="+ebene: int&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-27">
           <mxGeometry y="78" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-13" value="Knoten" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="980" y="400" width="230" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-14" value="- m_type: ParserAlphabet&#xa;- m_sons: std::list&lt;Knoten&gt;&#xa;- m_tokens: std::list&lt;Token&gt;&#xa;- m_nxtType: std::list&lt;ParserToken&gt;&#xa;- m_pos_sons:int&#xa;-m_pos_tokens:int&#xa;- m_pos_nxtType:int&#xa; " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
+          <mxGeometry y="26" width="230" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
+          <mxGeometry y="140" width="230" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-16" value="+ Knoten(Type)&#xa;+ push(Knoten): void&#xa;+ push(Token): void&#xa;+ peekNext_type(): Sort&#xa;+ peekNext_knoten(): Knoten&amp;&#xa;+ peekNext_token(): Token&amp;&#xa;+ getNext_type(): Sort&#xa;+ getNext_knoten(): Knoten&#xa;+ getNext_token(): Token&#xa;+ isEmpty(): bool&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="bejTTtgLJYXNNboedkVA-13">
+          <mxGeometry y="150" width="230" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-16" target="bejTTtgLJYXNNboedkVA-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bejTTtgLJYXNNboedkVA-36" target="LNcLyEtPPPjx2cFFu8yj-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bejTTtgLJYXNNboedkVA-36" value="&lt;div&gt;enum Terminals&lt;br&gt;&lt;/div&gt;" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="70" width="130" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
