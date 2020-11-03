@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headerdateien\ParseTree">
+      <UniqueIdentifier>{c0bd2fc9-d580-4446-9cb4-76fd5736f9b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\ParseTree">
+      <UniqueIdentifier>{4e312d39-b4c2-4428-a793-b29fe58f538d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scanner.cpp">
@@ -33,6 +39,33 @@
     <ClCompile Include="Tokenstruct.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Dec_Type.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="Event_Declaration.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="FSM.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="State_Transitions.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="Statement.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="Transition.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scanner.h">
@@ -51,6 +84,33 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Parser.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Statement.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Event_Declaration.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Transitions.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Dec_Type.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Transition.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
