@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-03T19:09:28.462Z" agent="5.0 (Windows)" etag="9ouDLcQZfaLV7u8RMTVc" version="13.8.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-03T19:16:38.181Z" agent="5.0 (Windows)" etag="qGqFM54uvIecTI2K1vmN" version="13.8.8" type="github">
   <diagram id="VAAiEscxtQo0bk0bTV3w" name="Page-1">
     <mxGraphModel dx="1343" dy="1151" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -28,14 +28,8 @@
         <mxCell id="qd86TqnkqC9Rq4TNaDRR-29" value=": state_transitions" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=22;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
           <mxGeometry x="660" y="490" width="230" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="qd86TqnkqC9Rq4TNaDRR-31" value=": transition" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=22;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="380" y="710" width="230" height="72" as="geometry" />
-        </mxCell>
-        <mxCell id="qd86TqnkqC9Rq4TNaDRR-32" value="&lt;div align=&quot;left&quot;&gt;initial = true&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;stat_name = &quot;OFF&quot;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="qd86TqnkqC9Rq4TNaDRR-31">
-          <mxGeometry y="22" width="230" height="50" as="geometry" />
-        </mxCell>
         <mxCell id="qd86TqnkqC9Rq4TNaDRR-34" value=": state_transition" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=22;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="430" y="607" width="230" height="72" as="geometry" />
+          <mxGeometry x="520" y="610" width="230" height="72" as="geometry" />
         </mxCell>
         <mxCell id="qd86TqnkqC9Rq4TNaDRR-35" value="&lt;div align=&quot;left&quot;&gt;initial = true&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;stat_name = &quot;OFF&quot;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="qd86TqnkqC9Rq4TNaDRR-34">
           <mxGeometry y="22" width="230" height="50" as="geometry" />
@@ -51,6 +45,42 @@
             <mxPoint x="656" y="442" as="sourcePoint" />
             <mxPoint x="785" y="500" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-39" value=": transition" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=22;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="491" y="738" width="250" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-40" value="&lt;div&gt;on_id_list = &quot;switch_on&quot;&lt;/div&gt;&lt;div&gt;do_id_list = &quot;turn_on_light&quot;, &quot;set_timer_5min&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="qd86TqnkqC9Rq4TNaDRR-39">
+          <mxGeometry y="22" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-41" value="" style="endArrow=open;endFill=1;endSize=12;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qd86TqnkqC9Rq4TNaDRR-34" target="qd86TqnkqC9Rq4TNaDRR-39">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="720" y="710" as="sourcePoint" />
+            <mxPoint x="616" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-42" value=": state_transition" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=22;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="610" width="230" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-43" value="&lt;div align=&quot;left&quot;&gt;initial = false&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;stat_name = &quot;ON&quot;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="qd86TqnkqC9Rq4TNaDRR-42">
+          <mxGeometry y="22" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-44" value="" style="endArrow=open;endFill=1;endSize=12;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qd86TqnkqC9Rq4TNaDRR-29" target="qd86TqnkqC9Rq4TNaDRR-42">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="727.5" y="552" as="sourcePoint" />
+            <mxPoint x="645" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-48" value="" style="endArrow=open;endFill=1;endSize=12;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qd86TqnkqC9Rq4TNaDRR-42" target="qd86TqnkqC9Rq4TNaDRR-49">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="842.5" y="552" as="sourcePoint" />
+            <mxPoint x="942" y="738" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-49" value=": transition" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=22;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="810" y="738" width="250" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="qd86TqnkqC9Rq4TNaDRR-50" value="&lt;div&gt;on_id_list = &quot;switch_off&quot;, &quot;timer&quot;&lt;br&gt;&lt;/div&gt;&lt;div&gt;do_id_list = &quot;turn_off_light&quot;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="qd86TqnkqC9Rq4TNaDRR-49">
+          <mxGeometry y="22" width="250" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
