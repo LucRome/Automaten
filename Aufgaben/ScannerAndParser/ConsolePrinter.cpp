@@ -28,3 +28,15 @@ void ConsolePrinter::printParseCalltimeline(std::queue<std::string> timeline)
 		timeline.pop();
 	}
 }
+
+void ConsolePrinter::printScannerError(int line, int column)
+{
+	std::cout << "There was a Scanner Error (symbol not valid) at [line, column]: " << line << "," << column << std::endl;
+}
+
+void ConsolePrinter::printParserError(int line, int column, Terminals expected, Token given)
+{
+	std::cout << "There was a Parser Error (wrong 'word') at [line, column]: " << line << "," << column;
+	std::cout << "\nThe expected word was of the type: " << terminalNames[expected] <<  "| given was: " << terminalNames[given.type] << ", " << given.name <<std::endl;
+	std::cout << "(ID means any (correct) name declaration" << std::endl;
+}

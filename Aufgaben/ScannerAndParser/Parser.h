@@ -1,6 +1,7 @@
 #pragma once
 #include "Tokenstruct.h"
 #include "Scanner.h"
+#include "ConsolePrinter.h"
 #include <queue>
 
 class Parser
@@ -30,5 +31,6 @@ private:
 	Scanner scanner;
 	//std::queue<Token> m_tokens;
 	std::queue<std::string> m_calltimeline;
+	ConsolePrinter printer;
 };
 

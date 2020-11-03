@@ -23,70 +23,71 @@ std::queue<Token> Scanner::getTokens()
 	return m_tokens;
 }
 
-Token Scanner::automat()
+lookRet Scanner::automat()
 {
 	bool success = true;
 	bool end = false;
 	//Zustandsautomat (Endzustände mit Return: hier)
 	int step = 0;
-	Token token = { Terminals::ERROR, "" };
+	lookRet lR = { {Terminals::ERROR, ""}, m_file.getLine(), m_file.getColumn() };
+
 	while (!end && success) {
 		end = true;
 		switch (step)
 		{
 			//Endzustände
 		case 6:
-			token = { Terminals::EVENT, "" };
+			lR.token = { Terminals::EVENT, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 14:
-			token = { Terminals::INITIAL, "" };
+			lR.token = { Terminals::INITIAL, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 15:
-			token = { Terminals::IN, "" };
+			lR.token = { Terminals::IN, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 21:
-			token = { Terminals::STATE, "" };
+			lR.token = { Terminals::STATE, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 24:
-			token = { Terminals::ON, "" };
+			lR.token = { Terminals::ON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 29:
-			token = { Terminals::GOTO, "" };
+			lR.token = { Terminals::GOTO, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 30:
-			token = { Terminals::COMMA, "" };
+			lR.token = { Terminals::COMMA, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 31:
-			token = { Terminals::SEMICOLON, "" };
+			lR.token = { Terminals::SEMICOLON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 32:
-			token = { Terminals::COLON, "" };
+			lR.token = { Terminals::COLON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 35:
-			token = { Terminals::ID, m_name };
+			lR.token = { Terminals::ID, m_name };
 			m_name = "";
 			step = 0;
 			break;
 		case 36:
-			token = { Terminals::ERROR, "" };
+			lR.token = { Terminals::ERROR, "" };
 			m_name = "";
 			step = 0;
 			success = false;
@@ -97,11 +98,11 @@ Token Scanner::automat()
 				end = false;
 			}
 			else {
-				token = { Terminals::FINISH, "" };
+				lR.token = { Terminals::FINISH, "" };
 			}
 		}
 	}
-	return token;;
+	return lR;
 }
 
 bool Scanner::scan()
@@ -115,31 +116,30 @@ bool Scanner::scan()
 	return success;
 }
 
-Token Scanner::lookup(bool consume)
+lookRet Scanner::lookup(bool consume)
 {
-	Token t;
-
+	lookRet lR;
 	if (consume && tokenAlreadyScanned) { 
 		//ret Temp, next time: new scan
-		t = tempToken;
+		lR = tempToken;
 		tokenAlreadyScanned = false;
 	}
 	else if (consume && !tokenAlreadyScanned) {
 		//new scan, no save
-		t = automat();
+		lR = automat();
 	}
 	else if (!consume && tokenAlreadyScanned) {
 		//ret Temp, keep temp
-		t = tempToken;
+		lR = tempToken;
 	}
 	else {
 		//!consume && !tokenAlreadyScanned
 		//-> scan, save Token in temp
-		t = automat();
-		tempToken = t;
+		lR = automat();
+		tempToken = lR;
 		tokenAlreadyScanned = true;
 	}
-	return t;
+	return lR;
 }
 
 int Scanner::eval(int state)

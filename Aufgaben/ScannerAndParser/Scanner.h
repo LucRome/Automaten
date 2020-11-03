@@ -4,6 +4,12 @@
 #include "File.h"
 #include "Tokenstruct.h"
 
+struct lookRet {
+	Token token;
+	int line;
+	int column;
+};
+
 class Scanner
 {
 public:
@@ -11,10 +17,10 @@ public:
 	Token getNextToken(); //old
 	Token readNextToken() const; //old
 	std::queue<Token> getTokens(); //old
-	Token lookup(bool consume);
+	lookRet lookup(bool consume);
 
 private:
-	Token automat();
+	lookRet automat();
 	bool scan(); //veraltet -> use lookup()
 	int eval(int state); //auﬂer Endstates
 
@@ -32,7 +38,7 @@ private:
 
 	//Hilfe
 	bool tokenAlreadyScanned = false;
-	Token tempToken;
+	lookRet tempToken;
 	std::string m_name = std::string();
 };
 

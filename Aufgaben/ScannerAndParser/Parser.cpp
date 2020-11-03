@@ -19,23 +19,33 @@ std::queue<std::string> Parser::getCalltimeline() const
 bool Parser::match(Terminals t)
 {
     bool success;
-    if (match_noConsume(t)) {
-        scanner.lookup(true);
+    lookRet lR = scanner.lookup(true);
+    if (lR.token == t) {
         success = true;
     }
     else {
+        if (lR.token == Terminals::ERROR) {
+            printer.printScannerError(lR.line, lR.column);
+        }
+        else {
+            printer.printParserError(lR.line, lR.column, t, lR.token);
+        }
         success = false;
     }
     return success;
 }
 
-bool Parser::match_noConsume(Terminals t)
+bool Parser::match_noConsume(Terminals t) //just for tests, so no Parser error here
 {
     bool success;
-    if (scanner.lookup(false) == t) {
+    lookRet lR = scanner.lookup(false);
+    if (lR.token == t) {
         success = true;
     }
     else {
+        if (lR.token == Terminals::ERROR) {
+            printer.printScannerError(lR.line, lR.column);
+        }
         success = false;
     }
     return success;;
@@ -104,7 +114,9 @@ bool Parser::statetransition()
 bool Parser::opt_initial()
 {
     m_calltimeline.push("opt_initial");
-    match(INITIAL);
+    if (match_noConsume(INITIAL)) {
+        match(INITIAL);
+    }
     return true;
 }
 

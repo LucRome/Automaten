@@ -111,7 +111,7 @@
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
     <ClInclude Include="Task.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
