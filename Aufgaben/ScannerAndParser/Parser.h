@@ -1,11 +1,12 @@
 #pragma once
 #include "Tokenstruct.h"
+#include "Scanner.h"
 #include <queue>
 
 class Parser
 {
 public:
-	Parser(std::queue<Token> tokens);
+	Parser(std::string filepath);
 
 	bool parse();
 	std::queue<std::string> getCalltimeline() const;
@@ -26,7 +27,8 @@ private:
 	bool transition();
 	bool opt_id_list();
 
-	std::queue<Token> m_tokens;
+	Scanner scanner;
+	//std::queue<Token> m_tokens;
 	std::queue<std::string> m_calltimeline;
 };
 

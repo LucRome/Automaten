@@ -23,79 +23,70 @@ std::queue<Token> Scanner::getTokens()
 	return m_tokens;
 }
 
-bool Scanner::scan()
-{
-	bool success;
-	//queue solange auffüllen, bis Datei zuende
-	do{
-		success = scan_nextLexem();
-	} while (!m_file.fileEnd() && success);
-	m_file.closeFile();
-	return success;
-}
-
-bool Scanner::scan_nextLexem()
+Token Scanner::automat()
 {
 	bool success = true;
 	bool end = false;
 	//Zustandsautomat (Endzustände mit Return: hier)
 	int step = 0;
+	Token token = { Terminals::ERROR, "" };
 	while (!end && success) {
+		end = true;
 		switch (step)
 		{
 			//Endzustände
 		case 6:
-			m_tokens.push({ Terminals::EVENT, "" });
+			token = { Terminals::EVENT, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 14:
-			m_tokens.push({ Terminals::INITIAL, "" });
+			token = { Terminals::INITIAL, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 15:
-			m_tokens.push({ Terminals::IN, "" });
+			token = { Terminals::IN, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 21:
-			m_tokens.push({ Terminals::STATE, "" });
+			token = { Terminals::STATE, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 24:
-			m_tokens.push({ Terminals::ON, "" });
+			token = { Terminals::ON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 29:
-			m_tokens.push({ Terminals::GOTO, "" });
+			token = { Terminals::GOTO, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 30:
-			m_tokens.push({ Terminals::COMMA, "" });
+			token = { Terminals::COMMA, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 31:
-			m_tokens.push({ Terminals::SEMICOLON, "" });
+			token = { Terminals::SEMICOLON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 32:
-			m_tokens.push({ Terminals::COLON, "" });
+			token = { Terminals::COLON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 35:
-			m_tokens.push({ Terminals::ID, m_name });
+			token = { Terminals::ID, m_name };
 			m_name = "";
 			step = 0;
 			break;
 		case 36:
-			m_tokens.push({ Terminals::ERROR, "" });
+			token = { Terminals::ERROR, "" };
 			m_name = "";
 			step = 0;
 			success = false;
@@ -103,13 +94,52 @@ bool Scanner::scan_nextLexem()
 		default:
 			if (!m_file.fileEnd()) {
 				step = eval(step);
+				end = false;
 			}
 			else {
-				end = true;
+				token = { Terminals::FINISH, "" };
 			}
 		}
 	}
+	return token;;
+}
+
+bool Scanner::scan()
+{
+	bool success = true;
+	//queue solange auffüllen, bis Datei zuende
+	/*do{
+		success = lookup();
+	} while (!m_file.fileEnd() && success);
+	m_file.closeFile();*/
 	return success;
+}
+
+Token Scanner::lookup(bool consume)
+{
+	Token t;
+
+	if (consume && tokenAlreadyScanned) { 
+		//ret Temp, next time: new scan
+		t = tempToken;
+		tokenAlreadyScanned = false;
+	}
+	else if (consume && !tokenAlreadyScanned) {
+		//new scan, no save
+		t = automat();
+	}
+	else if (!consume && tokenAlreadyScanned) {
+		//ret Temp, keep temp
+		t = tempToken;
+	}
+	else {
+		//!consume && !tokenAlreadyScanned
+		//-> scan, save Token in temp
+		t = automat();
+		tempToken = t;
+		tokenAlreadyScanned = true;
+	}
+	return t;
 }
 
 int Scanner::eval(int state)

@@ -8,13 +8,14 @@ class Scanner
 {
 public:
 	Scanner(std::string filepath);
-	Token getNextToken();
-	Token readNextToken() const;
-	std::queue<Token> getTokens();
-	
+	Token getNextToken(); //old
+	Token readNextToken() const; //old
+	std::queue<Token> getTokens(); //old
+	Token lookup(bool consume);
+
 private:
-	bool scan();
-	bool scan_nextLexem();
+	Token automat();
+	bool scan(); //veraltet -> use lookup()
 	int eval(int state); //auﬂer Endstates
 
 	int StandardAlternatives(char c);
@@ -30,6 +31,8 @@ private:
 	bool m_scanSuccessfull;
 
 	//Hilfe
+	bool tokenAlreadyScanned = false;
+	Token tempToken;
 	std::string m_name = std::string();
 };
 

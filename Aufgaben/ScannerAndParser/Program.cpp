@@ -6,10 +6,8 @@
 
 int main(std::string args[]) { //Später: Pfad aus args[]
 	std::string path = "Test.txt";
-	Scanner scanner = Scanner(path);
 	ConsolePrinter printer;
-	printer.printLexeme(scanner.getTokens());
-	Parser parser = Parser(scanner.getTokens());
+	Parser parser = Parser(path);
 	std::cout << parser.parse() << std::endl;
 	printer.printParseCalltimeline(parser.getCalltimeline());
 }

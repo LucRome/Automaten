@@ -1,9 +1,9 @@
 #include "Parser.h"
 #include "Parser.h"
 
-Parser::Parser(std::queue<Token> tokens)
+Parser::Parser(std::string filepath)
+    :scanner(Scanner(filepath))
 {
-    m_tokens = tokens;
 }
 
 bool Parser::parse()
@@ -19,8 +19,8 @@ std::queue<std::string> Parser::getCalltimeline() const
 bool Parser::match(Terminals t)
 {
     bool success;
-    if (m_tokens.front() == t) {
-        m_tokens.pop();
+    if (match_noConsume(t)) {
+        scanner.lookup(true);
         success = true;
     }
     else {
@@ -32,7 +32,7 @@ bool Parser::match(Terminals t)
 bool Parser::match_noConsume(Terminals t)
 {
     bool success;
-    if (!m_tokens.empty() && m_tokens.front() == t) {
+    if (scanner.lookup(false) == t) {
         success = true;
     }
     else {
@@ -63,7 +63,9 @@ bool Parser::id_list2()
 {
     m_calltimeline.push("id_list2");
     bool success;
-    if (match(COMMA)) {
+    if (match_noConsume(COMMA)) {
+        //remove COMMA
+        scanner.lookup(true);
         success = id_list();
     }
     else { //empty
