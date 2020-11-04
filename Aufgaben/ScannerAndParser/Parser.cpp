@@ -8,7 +8,7 @@ Parser::Parser(std::string filepath)
 
 bool Parser::parse()
 {
-    return FSM();
+    return FSM_func();
 }
 
 std::queue<std::string> Parser::getCalltimeline() const
@@ -51,9 +51,11 @@ bool Parser::match_noConsume(Terminals t) //just for tests, so no Parser error h
     return success;;
 }
 
-bool Parser::FSM()
+bool Parser::FSM_func()
 {
     m_calltimeline.push("FSM");
+    ast_start = *(new FSM());
+    //TODO: AST implementieren
     return event_declarations() && state_transitions();
 }
 

@@ -2,6 +2,7 @@
 #include "Tokenstruct.h"
 #include "Scanner.h"
 #include "ConsolePrinter.h"
+#include "FSM.h"
 #include <queue>
 
 class Parser
@@ -16,7 +17,7 @@ private:
 	bool match_noConsume(Terminals t);
 
 	//Produktionen
-	bool FSM();
+	bool FSM_func();
 	bool event_declarations();
 	bool id_list();
 	bool id_list2();
@@ -32,5 +33,8 @@ private:
 	//std::queue<Token> m_tokens;
 	std::queue<std::string> m_calltimeline;
 	ConsolePrinter printer;
+
+	//AST:
+	FSM& ast_start;
 };
 
