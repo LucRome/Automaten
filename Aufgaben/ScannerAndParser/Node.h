@@ -13,7 +13,7 @@ class Statement;
 
 class Node
 {
-protected:
+public:
 	virtual void push(Event& e);
 	virtual void push(Task& t);
 	virtual void push(State& s);
