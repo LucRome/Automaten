@@ -9,10 +9,7 @@ class State :
     public Dec_Type
 {
 public:
-    State(std::string name, bool is_initial);
-
-    bool initial;
-    std::string state_name;
+    State(std::string name);
     
 	//delete/hide unused Dec_Type elements
 	void push(Event& e) = delete;

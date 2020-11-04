@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <memory>
+#include <string>
 
 class Event;
 class Task;
@@ -21,6 +22,8 @@ public:
 	void push(Event_Declaration& ed);
 	void push(State_Transitions& st);
 	void set_goto(State& s); //pushes to goToState
+	void setName(std::string _name);
+	void setInitial();
 
 	/*potential children, delete unneccessary*/
 	std::vector<std::shared_ptr<Statement>> statement_list;
@@ -29,5 +32,7 @@ public:
 	std::vector<std::shared_ptr<Dec_Type>> state_list;
 	std::vector<std::shared_ptr<Dec_Type>> transition_list;
 	std::shared_ptr<Dec_Type> gotoState;
+	std::string name;
+	bool initial = false;
 };
 

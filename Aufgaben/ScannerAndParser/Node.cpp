@@ -40,3 +40,13 @@ void Node::set_goto(State& s)
 {
 	gotoState = std::make_shared<State>(s);
 }
+
+void Node::setName(std::string _name)
+{
+	name = _name;
+}
+
+void Node::setInitial()
+{
+	initial = true;
+}
