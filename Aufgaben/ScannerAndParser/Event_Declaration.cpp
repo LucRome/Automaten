@@ -1,6 +1,7 @@
 #include "Event_Declaration.h"
 
-void Event_Declaration::push_Event(const Event& ev)
+Event_Declaration::Event_Declaration()
+	:Statement()
 {
-	event_list.push_back(std::make_shared<Event>(ev));
+	state_list.shrink_to_fit();
 }

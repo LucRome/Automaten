@@ -8,7 +8,12 @@
 class State_Transitions :
     public Statement
 {
-    void push_State(const State& state);
-    std::vector<std::shared_ptr<Dec_Type>> state_list;
+    State_Transitions();
+
+    //delete/hide unused Statement elements
+    void push(Event& e) = delete;
+
+private:
+    using Statement::event_list;
 };
 

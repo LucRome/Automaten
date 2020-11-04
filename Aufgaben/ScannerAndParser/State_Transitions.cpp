@@ -1,6 +1,7 @@
 #include "State_Transitions.h"
 
-void State_Transitions::push_State(const State& state)
+State_Transitions::State_Transitions() 
+	:Statement()
 {
-	state_list.push_back(std::make_shared<State>(state));
+	event_list.shrink_to_fit();
 }

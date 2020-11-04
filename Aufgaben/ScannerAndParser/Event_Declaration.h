@@ -8,7 +8,13 @@
 class Event_Declaration :
     public Statement
 {
-    void push_Event(const Event& ev);
-    std::vector<std::shared_ptr<Dec_Type>> event_list;
+public:
+	Event_Declaration();
+
+    //delete/hide unused statement funcs/objects
+	void push(State& s) = delete;
+
+private:
+	using Statement::state_list;
 };
 
