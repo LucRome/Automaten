@@ -14,12 +14,12 @@ class Statement;
 class Node
 {
 public:
-	virtual void push(Event& e);
-	virtual void push(Task& t);
-	virtual void push(State& s);
-	virtual void push(Transition& t);
-	virtual void push(Event_Declaration& ed);
-	virtual void push(State_Transitions& st);
+	void push(Event& e);
+	void push(Task& t);
+	void push(State& s);
+	void push(Transition& t);
+	void push(Event_Declaration& ed);
+	void push(State_Transitions& st);
 
 	/*potential children, delete unneccessary*/
 	std::vector<std::shared_ptr<Statement>> statement_list;
