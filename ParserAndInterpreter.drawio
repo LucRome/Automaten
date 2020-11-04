@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-11-04T21:10:07.949Z" agent="5.0 (Windows)" etag="uC6TYW9vkct6kOprWHon" version="13.9.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-04T22:15:10.134Z" agent="5.0 (Windows)" etag="VDVsR6BZGFSzBHe9fZJo" version="13.9.0" type="github">
   <diagram id="VAAiEscxtQo0bk0bTV3w" name="Page-1">
-    <mxGraphModel dx="1208" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="883" dy="1151" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -204,8 +204,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_82jTj0wabOVNb629D7D-1" value="&lt;&lt;abstract&gt;&gt;&#xa;Node" style="swimlane;fontStyle=2;childLayout=stackLayout;horizontal=1;startSize=28;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="890" y="872" width="160" height="88" as="geometry" />
+        <mxCell id="_82jTj0wabOVNb629D7D-1" value="Node" style="swimlane;fontStyle=2;childLayout=stackLayout;horizontal=1;startSize=28;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="910" y="872" width="160" height="88" as="geometry" />
         </mxCell>
         <mxCell id="_82jTj0wabOVNb629D7D-6" value="&lt;div&gt;+push (Event&amp;amp;): void&lt;/div&gt;&lt;div&gt;+push (Task&amp;amp;): void&lt;/div&gt;&lt;div&gt;+push (State&amp;amp;): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+push (Transition&amp;amp;): void&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="_82jTj0wabOVNb629D7D-1" vertex="1">
           <mxGeometry y="28" width="160" height="60" as="geometry" />
