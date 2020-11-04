@@ -8,7 +8,6 @@
 class State_Transitions :
     public Statement
 {
-public:
     State_Transitions();
 
     //delete/hide unused Statement elements

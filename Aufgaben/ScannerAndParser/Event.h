@@ -5,7 +5,7 @@ class Event :
     public Dec_Type
 {
 public:
-    Event(std::string name);
+    Event();
 
     //delete/hide unused Dec_Type elements
 	void push(Event& e) = delete;

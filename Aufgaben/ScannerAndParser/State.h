@@ -9,7 +9,7 @@ class State :
     public Dec_Type
 {
 public:
-    State(std::string name);
+    State();
     
 	//delete/hide unused Dec_Type elements
 	void push(Event& e) = delete;

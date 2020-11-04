@@ -9,6 +9,7 @@ class Task;
 class Transition :
     public Dec_Type
 {
+public:
     Transition();
 
 	//delete/hide unused Dec_Type elements

@@ -6,7 +6,7 @@ class Task :
     public Dec_Type
 {
 public:
-    Task(std::string name);
+    Task();
 
     //delete/hide unused Dec_Type elements
     void push(Event& e) = delete;
