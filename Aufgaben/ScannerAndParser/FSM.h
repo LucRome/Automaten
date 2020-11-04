@@ -16,6 +16,7 @@ public:
 	void push(Task& t) = delete;
 	void push(State& s) = delete;
 	void push(Transition& t) = delete;
+	void set_goto(State& s) = delete;
 
 
 //hide objects
@@ -24,4 +25,5 @@ private:
 	using Node::task_list;
 	using Node::state_list;
 	using Node::transition_list;
+	using Node::gotoState;
 };

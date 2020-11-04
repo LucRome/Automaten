@@ -11,10 +11,12 @@ public:
 	void push(Transition& t) = delete;
 	void push(Event_Declaration& ed) = delete;
 	void push(State_Transitions& st) = delete;
+	void set_goto(State& s) = delete;
 	
 private:
 	using Node::statement_list;
 	using Node::task_list;
 	using Node::transition_list;
+	using Node::gotoState;
 };
 

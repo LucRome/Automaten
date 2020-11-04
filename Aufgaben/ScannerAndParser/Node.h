@@ -20,6 +20,7 @@ public:
 	void push(Transition& t);
 	void push(Event_Declaration& ed);
 	void push(State_Transitions& st);
+	void set_goto(State& s);
 
 	/*potential children, delete unneccessary*/
 	std::vector<std::shared_ptr<Statement>> statement_list;
@@ -27,5 +28,6 @@ public:
 	std::vector<std::shared_ptr<Dec_Type>> task_list;
 	std::vector<std::shared_ptr<Dec_Type>> state_list;
 	std::vector<std::shared_ptr<Dec_Type>> transition_list;
+	std::shared_ptr<Dec_Type> gotoState;
 };
 

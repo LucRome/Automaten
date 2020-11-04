@@ -35,3 +35,8 @@ void Node::push(State_Transitions& st)
 {
 	statement_list.push_back(std::make_shared<State_Transitions>(st));
 }
+
+void Node::set_goto(State& s)
+{
+	gotoState = std::make_shared<State>(s);
+}
