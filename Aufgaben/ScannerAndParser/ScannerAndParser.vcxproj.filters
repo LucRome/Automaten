@@ -66,6 +66,9 @@
     <ClCompile Include="Task.cpp">
       <Filter>Quelldateien\ParseTree</Filter>
     </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scanner.h">
@@ -111,6 +114,9 @@
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
     <ClInclude Include="Task.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
   </ItemGroup>
