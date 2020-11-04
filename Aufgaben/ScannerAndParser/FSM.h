@@ -6,13 +6,22 @@
 
 class FSM : public Node
 {
-	void push_statement(std::shared_ptr<Statement> st);
-	std::vector<std::shared_ptr<Statement>> statement_list;
+public:
+	FSM();
 
-	//Node fkts (here: not usable)
+	std::vector<std::shared_ptr<Statement>> statement_list; //children
+
+	//Node deletes
+	void push(Event& e) = delete;
+	void push(Task& t) = delete;
+	void push(State& s) = delete;
+	void push(Transition& t) = delete;
+
+
+//hide objects
 private:
-	void push(Event& e) override;
-	void push(Task& t) override;
-	void push(State& s) override;
-	void push(Transition& t) override;
+	using Node::event_list;
+	using Node::task_list;
+	using Node::state_list;
+	using Node::transition_list;
 };
