@@ -3,10 +3,8 @@
 State::State(std::string name, bool is_initial) 
 	:initial(is_initial)
 	,state_name(name)
+	,Dec_Type()
 {
-}
-
-void State::push_Transition(const Transition& tran)
-{
-	transition_list.push_back(std::make_shared<Transition>(tran));
+	event_list.shrink_to_fit();
+	task_list.shrink_to_fit();
 }

@@ -16,11 +16,11 @@ class Node
 public:
 	void push(Event& e);
 	void push(Task& t);
-	void push(State& s);
+	void push(State& s); //pushes to vector
 	void push(Transition& t);
 	void push(Event_Declaration& ed);
 	void push(State_Transitions& st);
-	void set_goto(State& s);
+	void set_goto(State& s); //pushes to goToState
 
 	/*potential children, delete unneccessary*/
 	std::vector<std::shared_ptr<Statement>> statement_list;
