@@ -7,8 +7,9 @@ class State :
 {
 public:
     void push(std::shared_ptr<Transition> tran) override;
-    bool getInitial();
     void setInitial(bool isInitial);
+    bool getInitial() const;
+    const std::vector<std::shared_ptr<Transition>>& getTransitions() const;
 
 private:
     bool initial = false;

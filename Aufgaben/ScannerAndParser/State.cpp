@@ -5,12 +5,17 @@ void State::push(std::shared_ptr<Transition> tran)
 	trans_list.push_back(tran);
 }
 
-bool State::getInitial()
+void State::setInitial(bool isInitial)
+{
+	initial = isInitial;
+}
+
+bool State::getInitial() const
 {
 	return initial;
 }
 
-void State::setInitial(bool isInitial)
+const std::vector<std::shared_ptr<Transition>>& State::getTransitions() const
 {
-	initial = isInitial;
+	return trans_list;
 }
