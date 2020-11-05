@@ -1,20 +1,27 @@
 #pragma once
 #include <string>
 #include <queue>
-#include <fstream>
+#include "File.h"
 #include "Tokenstruct.h"
+
+struct lookRet {
+	Token token;
+	int line;
+	int column;
+};
 
 class Scanner
 {
 public:
 	Scanner(std::string filepath);
-	Token getNextToken();
-	Token readNextToken() const;
-	
+	Token getNextToken(); //old
+	Token readNextToken() const; //old
+	std::queue<Token> getTokens(); //old
+	lookRet lookup(bool consume);
+
 private:
-	char getNextChar();
-	bool scan();
-	bool oneScan();
+	lookRet automat();
+	bool scan(); //veraltet -> use lookup()
 	int eval(int state); //auﬂer Endstates
 
 	int StandardAlternatives(char c);
@@ -25,12 +32,13 @@ private:
 	bool is_fin(char c);
 
 
-	std::fstream file;
-	const std::string m_filepath;
+	File m_file;
 	std::queue<Token> m_tokens = std::queue<Token>();
 	bool m_scanSuccessfull;
 
 	//Hilfe
+	bool tokenAlreadyScanned = false;
+	lookRet tempToken;
 	std::string m_name = std::string();
 };
 

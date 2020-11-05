@@ -1,8 +1,7 @@
 #include "Scanner.h"
 
 Scanner::Scanner(std::string filepath)
-	:m_filepath(filepath)
-	,file(m_filepath)
+	:m_file(filepath)
 {
 	m_scanSuccessfull = scan();
 }
@@ -19,97 +18,141 @@ Token Scanner::readNextToken() const
 	return m_tokens.front();
 }
 
-char Scanner::getNextChar()
+std::queue<Token> Scanner::getTokens()
 {
-	return file.get();
+	return m_tokens;
 }
 
-bool Scanner::scan()
+lookRet Scanner::automat()
 {
-	bool success;
-	//queue solange auffüllen, bis Datei zuende
-	do{
-		success = oneScan();
-	} while (file.gcount() > 0 && success);
-
-	m_scanSuccessfull = success;
-}
-
-bool Scanner::oneScan()
-{
-	bool finished = false;
+	bool success = true;
+	bool end = false;
 	//Zustandsautomat (Endzustände mit Return: hier)
 	int step = 0;
-	while (file.gcount() > 0) {
+	lookRet lR = { {Terminals::ERROR, ""}, m_file.getLine(), m_file.getColumn() };
+
+	while (!end && success) {
+		end = true;
 		switch (step)
 		{
 			//Endzustände
 		case 6:
-			m_tokens.push({ Terminals::EVENT, "" });
+			lR.token = { Terminals::EVENT, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 14:
-			m_tokens.push({ Terminals::INITIAL, "" });
+			lR.token = { Terminals::INITIAL, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 15:
-			m_tokens.push({ Terminals::IN, "" });
+			lR.token = { Terminals::IN, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 21:
-			m_tokens.push({ Terminals::STATE, "" });
+			lR.token = { Terminals::STATE, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 24:
-			m_tokens.push({ Terminals::ON, "" });
+			lR.token = { Terminals::ON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 29:
-			m_tokens.push({ Terminals::GOTO, "" });
+			lR.token = { Terminals::GOTO, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 30:
-			m_tokens.push({ Terminals::COMMA, "" });
+			lR.token = { Terminals::COMMA, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 31:
-			m_tokens.push({ Terminals::SEMICOLON, "" });
+			lR.token = { Terminals::SEMICOLON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 32:
-			m_tokens.push({ Terminals::COLON, "" });
+			lR.token = { Terminals::COLON, "" };
 			m_name = "";
 			step = 0;
 			break;
 		case 35:
-			m_tokens.push({ Terminals::ID, m_name });
+			lR.token = { Terminals::ID, m_name };
 			m_name = "";
 			step = 0;
 			break;
 		case 36:
-			m_tokens.push({ Terminals::ERROR, "" });
+			lR.token = { Terminals::ERROR, "" };
 			m_name = "";
 			step = 0;
+			success = false;
 			break;
 		default:
-			eval(step);
+			if (!m_file.fileEnd()) {
+				step = eval(step);
+				end = false;
+			}
+			else {
+				lR.token = { Terminals::FINISH, "" };
+			}
 		}
 	}
+	return lR;
+}
+
+bool Scanner::scan()
+{
+	bool success = true;
+	//queue solange auffüllen, bis Datei zuende
+	/*do{
+		success = lookup();
+	} while (!m_file.fileEnd() && success);
+	m_file.closeFile();*/
+	return success;
+}
+
+lookRet Scanner::lookup(bool consume)
+{
+	lookRet lR;
+	if (consume && tokenAlreadyScanned) { 
+		//ret Temp, next time: new scan
+		lR = tempToken;
+		tokenAlreadyScanned = false;
+	}
+	else if (consume && !tokenAlreadyScanned) {
+		//new scan, no save
+		lR = automat();
+	}
+	else if (!consume && tokenAlreadyScanned) {
+		//ret Temp, keep temp
+		lR = tempToken;
+	}
+	else {
+		//!consume && !tokenAlreadyScanned
+		//-> scan, save Token in temp
+		lR = automat();
+		tempToken = lR;
+		tokenAlreadyScanned = true;
+	}
+	return lR;
 }
 
 int Scanner::eval(int state)
 {
 	int nxt_state = state;
-	char nxt = getNextChar();
+	char nxt = m_file.getNextChar();
 	m_name += nxt;
+
+	if (is_fin(nxt) && state != 0) {
+		m_file.ungetChar();
+		m_name.pop_back();
+	}
+
 	switch (state)
 	{
 	case 0:
@@ -127,105 +170,108 @@ int Scanner::eval(int state)
 		break;
 	case 1:
 		if (nxt == 'v') { nxt_state = 2; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 2:
 		if (nxt == 'e') { nxt_state = 3; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 3:
 		if (nxt == 'n') { nxt_state = 4; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 4:
 		if (nxt == 't') { nxt_state = 5; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 5:
 		if (is_fin(nxt)) { nxt_state = 6; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
+		break;
 	case 7:
 		if (nxt == 'n') { nxt_state = 8; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 8:
 		if (nxt == 'i') { nxt_state = 9; }
 		else if (is_fin(nxt)) { nxt_state = 15; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 9:
 		if (nxt == 't') { nxt_state = 10; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 10:
 		if (nxt == 'i') { nxt_state = 11; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 11:
 		if (nxt == 'a') { nxt_state = 12; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 12:
 		if (nxt == 'l') { nxt_state = 13; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 13:
 		if (is_fin(nxt)) { nxt_state = 14; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 16:
 		if (nxt == 't') { nxt_state = 17; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 17:
 		if (nxt == 'a') { nxt_state = 18; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 18:
 		if (nxt == 't') { nxt_state = 19; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 19:
 		if (nxt == 'e') { nxt_state = 20; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 20:
 		if (is_fin(nxt)) { nxt_state = 21; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
+		break;
 	case 22:
 		if (nxt == 'n') { nxt_state = 23; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 23:
 		if (is_fin(nxt)) { nxt_state = 24; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 25:
 		if (nxt == 'o') { nxt_state = 26; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 26:
 		if (nxt == 't') { nxt_state = 27; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 27:
 		if (nxt == 'o') { nxt_state = 28; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 28:
 		if (is_fin(nxt)) { nxt_state = 29; }
-		else { nxt = StandardAlternatives(nxt); }
+		else { nxt_state = StandardAlternatives(nxt); }
 		break;
 	case 33:
 		if (is_id_end(nxt)) { nxt_state = 34; }
 		else { nxt_state = 36; }
 		break;
 	case 34:
-		nxt = StandardAlternatives(nxt);
+		nxt_state = StandardAlternatives(nxt);
 		break;
 	default:
 		break;
 	}
+
 	return nxt_state;
 }
 
@@ -243,8 +289,8 @@ bool Scanner::is_id_start(char c)
 	//A: 65;Z: 90; a: 97; z: 122; _: 95
 	bool a = (c >= 'A' && c <= 'Z');
 	bool b = (c >= 'a' && c <= 'z');
-	bool c = (c == '_');
-	return (a || b || c);
+	bool d = (c == '_');
+	return (a || b || d);
 }
 
 bool Scanner::is_id_end(char c)
@@ -256,5 +302,5 @@ bool Scanner::is_id_end(char c)
 
 bool Scanner::is_fin(char c)
 {
-	return (c == ',' || c == ';' || c == ':');
+	return (c == ',' || c == ';' || c == ':' || c == ' ');
 }
