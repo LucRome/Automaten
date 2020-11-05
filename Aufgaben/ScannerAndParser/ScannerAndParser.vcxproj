@@ -140,35 +140,33 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsolePrinter.cpp" />
-    <ClCompile Include="Dec_Type.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="Event_Declaration.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="FSM.cpp" />
+    <ClCompile Include="Named.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Scanner.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Statement.cpp" />
-    <ClCompile Include="State_Transitions.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="Tokenstruct.cpp" />
     <ClCompile Include="Transition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsolePrinter.h" />
-    <ClInclude Include="Dec_Type.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="Event_Declaration.h" />
     <ClInclude Include="File.h" />
     <ClInclude Include="FSM.h" />
+    <ClInclude Include="Named.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Scanner.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Statement.h" />
-    <ClInclude Include="State_Transitions.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="TerminalsEnum.h" />
     <ClInclude Include="Tokenstruct.h" />

@@ -39,35 +39,32 @@
     <ClCompile Include="Tokenstruct.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Dec_Type.cpp">
-      <Filter>Quelldateien\ParseTree</Filter>
-    </ClCompile>
-    <ClCompile Include="Event.cpp">
-      <Filter>Quelldateien\ParseTree</Filter>
-    </ClCompile>
-    <ClCompile Include="Event_Declaration.cpp">
+    <ClCompile Include="Node.cpp">
       <Filter>Quelldateien\ParseTree</Filter>
     </ClCompile>
     <ClCompile Include="FSM.cpp">
       <Filter>Quelldateien\ParseTree</Filter>
     </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Quelldateien\ParseTree</Filter>
-    </ClCompile>
-    <ClCompile Include="State_Transitions.cpp">
-      <Filter>Quelldateien\ParseTree</Filter>
-    </ClCompile>
     <ClCompile Include="Statement.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="Event_Declaration.cpp">
       <Filter>Quelldateien\ParseTree</Filter>
     </ClCompile>
     <ClCompile Include="Transition.cpp">
       <Filter>Quelldateien\ParseTree</Filter>
     </ClCompile>
+    <ClCompile Include="Named.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
+    </ClCompile>
     <ClCompile Include="Task.cpp">
       <Filter>Quelldateien\ParseTree</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="State.cpp">
+      <Filter>Quelldateien\ParseTree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +86,9 @@
     <ClInclude Include="Parser.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
     <ClInclude Include="FSM.h">
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
@@ -98,25 +98,19 @@
     <ClInclude Include="Event_Declaration.h">
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
-    <ClInclude Include="State_Transitions.h">
+    <ClInclude Include="Transition.h">
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
-    <ClInclude Include="Dec_Type.h">
+    <ClInclude Include="Named.h">
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
     <ClInclude Include="Event.h">
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>Headerdateien\ParseTree</Filter>
-    </ClInclude>
-    <ClInclude Include="Transition.h">
-      <Filter>Headerdateien\ParseTree</Filter>
-    </ClInclude>
     <ClInclude Include="Task.h">
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="State.h">
       <Filter>Headerdateien\ParseTree</Filter>
     </ClInclude>
   </ItemGroup>

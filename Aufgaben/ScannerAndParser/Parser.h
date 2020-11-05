@@ -8,7 +8,7 @@
 #include <stack>
 #include <map>
 
-enum nameables{n_state, n_task, n_event};
+enum nameables{n_task, n_event};
 
 class Parser
 {
@@ -23,6 +23,7 @@ private:
 	bool match_noConsume(Terminals t);
 
 	bool id(std::shared_ptr<Node>& dad, nameables n);
+	bool id(std::shared_ptr<State>& self);
 
 	//Produktionen (bekommen 'Vater' (der zugehörigen semantischen Objekte) mitgegeben
 	bool FSM_func();
@@ -32,7 +33,7 @@ private:
 	bool state_transitions(std::shared_ptr<Node>& dad);
 	bool state_transitions2(std::shared_ptr<Node>& dad);
 	bool statetransition(std::shared_ptr<Node>& dad);
-	bool opt_initial(std::shared_ptr<Node>& dad);
+	bool opt_initial(std::shared_ptr<State>& dad);
 	bool transitions(std::shared_ptr<Node>& dad);
 	bool transition(std::shared_ptr<Node>& dad);
 	bool opt_id_list(std::shared_ptr<Node>& dad);

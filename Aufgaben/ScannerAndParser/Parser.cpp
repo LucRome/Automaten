@@ -1,9 +1,13 @@
+#pragma once
 #include "Parser.h"
-#include "Parser.h"
+//ParseTree Klassen
 #include "Event_Declaration.h"
-#include "State_Transitions.h"
 #include "Task.h"
 #include "Event.h"
+#include "FSM.h"
+#include "Node.h"
+#include "State.h"
+#include "Transition.h"
 
 Parser::Parser(std::string filepath)
     :scanner(Scanner(filepath))
@@ -12,9 +16,7 @@ Parser::Parser(std::string filepath)
 
 bool Parser::parse()
 {
-    bool v = FSM_func();
-    v = false;
-    return v;
+    return FSM_func();
 }
 
 std::queue<std::string> Parser::getCalltimeline() const
@@ -80,21 +82,16 @@ bool Parser::id(std::shared_ptr<Node>& dad, nameables n)
 {
     std::string name = match_retName(ID);
     if (name != "") { // -> success match(ID)
-        //Objekt erstellen und pushen
-        if (n == n_state)
-        {
-            State& s = *(new State());
-            s.setName(name);
-            dad->set_goto(s);
-        }
-        else if (n == n_task) {
-            Task& t = *(new Task());
-            t.setName(name);
+        //Objekt erstellen und pushen (state in anderer id(...))
+        
+        if (n == n_task) {
+            std::shared_ptr<Task> t = std::make_shared<Task>();
+            t->setName(name);
             dad->push(t);
         }
         else if (n == n_event) {
-            Event& e = *(new Event());
-            e.setName(name);
+            std::shared_ptr<Event> e = std::make_shared<Event>();
+            e->setName(name);
             dad->push(e);
         }
         return true;
@@ -105,10 +102,19 @@ bool Parser::id(std::shared_ptr<Node>& dad, nameables n)
     }
 }
 
+bool Parser::id(std::shared_ptr<State>& self)
+{
+    std::string name = match_retName(ID);
+    if(name != ""){
+        self->setName(name);
+        return true;
+    };
+    return false;
+}
+
 
 bool Parser::FSM_func() //=: FSM
 {
-    bool ret;
     m_calltimeline.push("FSM");
     ast_start = std::make_shared<FSM>();
     //TODO: AST implementieren
@@ -117,16 +123,15 @@ bool Parser::FSM_func() //=: FSM
 
 bool Parser::event_declarations(std::shared_ptr<Node>& dad) //=: Event_Declaration
 {
-    Event_Declaration& self = *(new Event_Declaration());
-    std::shared_ptr<Node> p_self = std::make_shared<Event_Declaration>(self);
+    std::shared_ptr<Event_Declaration> self = std::make_shared<Event_Declaration>();
+    std::shared_ptr<Node> n_self = self;
     dad->push(self);
     m_calltimeline.push("event_declarations");
-    return match(EVENT) && id_list(p_self, nameables::n_event) && match(SEMICOLON);
+    return match(EVENT) && id_list(n_self, nameables::n_event) && match(SEMICOLON);
 }
 
 bool Parser::id_list(std::shared_ptr<Node>& dad, nameables n) //=: alles mit name
 {
-    //TODO: detType dad, addname
     m_calltimeline.push("id_list");
     
     return id(dad, n) && id_list2(dad, n);
@@ -148,13 +153,10 @@ bool Parser::id_list2(std::shared_ptr<Node>& dad, nameables n) //=: wie ID
     return success;
 }
 
-bool Parser::state_transitions(std::shared_ptr<Node>& dad) //=: State_Transitions
+bool Parser::state_transitions(std::shared_ptr<Node>& dad) //Dad: FSM
 {
-    State_Transitions& self = *(new State_Transitions());
-    std::shared_ptr<Node> p_self = std::make_shared<State_Transitions>(self);
-    dad->push(self);
     m_calltimeline.push("state_transitions");
-    return statetransition(p_self) && state_transitions2(dad);
+    return statetransition(dad) && state_transitions2(dad);
 }
 
 bool Parser::state_transitions2(std::shared_ptr<Node>& dad) //=: State_Transitions (kein neues Objekt hier)
@@ -172,30 +174,25 @@ bool Parser::state_transitions2(std::shared_ptr<Node>& dad) //=: State_Transitio
     return success;
 }
 
-bool Parser::statetransition(std::shared_ptr<Node>& dad) //=: State
+bool Parser::statetransition(std::shared_ptr<Node>& dad) //=: State (wird in id erstellt)
 {
-    bool succ = false;
-    State& self = *(new State());
-    std::shared_ptr<Node> p_self = std::make_shared<State>(self);
+    std::shared_ptr<State> self = std::make_shared<State>();
+    std::shared_ptr<Node> p_self = self;
     dad->push(self);
     m_calltimeline.push("statetransition");
-    succ = match(IN) && opt_initial(p_self) && match(STATE);
-    std::string name = match_retName(ID);
-    succ = succ && name != "";
-    if (succ) {
-        self.setName(name);
-        succ = succ && match(COLON) && transitions(p_self);
-    }
-    return  succ;
-        
+    return match(IN) && opt_initial(self) && match(STATE) 
+        && id(self) && match(COLON) && transitions(p_self);       
 }
 
-bool Parser::opt_initial(std::shared_ptr<Node>& dad) //=: State.initial
+bool Parser::opt_initial(std::shared_ptr<State>& dad) //=: State.initial
 {
     m_calltimeline.push("opt_initial");
     if (match_noConsume(INITIAL)) {
-        dad->setInitial();
+        dad->setInitial(true);
         match(INITIAL);
+    }
+    else {
+        dad->setInitial(false);
     }
     return true;
 }
@@ -216,11 +213,13 @@ bool Parser::transitions(std::shared_ptr<Node>& dad) //: Transition (kein neues 
 
 bool Parser::transition(std::shared_ptr<Node>& dad) //=: Transition
 {
-    Transition& self = *(new Transition());
-    std::shared_ptr<Node> p_self = std::make_shared<Transition>(self);
+    std::shared_ptr<Transition> self = std::make_shared<Transition>();
+    std::shared_ptr<Node> p_self = self;
+    std::shared_ptr<State> son = std::make_shared<State>();
     dad->push(self);
+    self->push(son);
     m_calltimeline.push("transition");
-    return (match(ON) && id_list(p_self, nameables::n_event) && match(GOTO) && id(p_self, nameables::n_state) 
+    return (match(ON) && id_list(p_self, nameables::n_event) && match(GOTO) && id(son) 
         && match(COLON) && opt_id_list(p_self) && match(SEMICOLON));
 }
 
@@ -229,7 +228,7 @@ bool Parser::opt_id_list(std::shared_ptr<Node>& dad) //=: Transition.task_list
     m_calltimeline.push("opt_id_list");
     bool success;
     if (match_noConsume(ID)) {
-        success = id_list(dad, nameables::n_event);
+        success = id_list(dad, nameables::n_task);
     }
     else {
         success = true;
