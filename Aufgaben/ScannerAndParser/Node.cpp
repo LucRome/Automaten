@@ -1,52 +1,21 @@
 #include "Node.h"
-#include "Event.h"
-#include "Task.h"
-#include "State.h"
-#include "Transition.h"
-#include "Event_Declaration.h"
-#include "State_Transitions.h"
 
-void Node::push(Event& e)
+void Node::push(std::shared_ptr<Event>)
 {
-	event_list.push_back(std::make_shared<Event>(e));
 }
 
-void Node::push(Task& t)
+void Node::push(std::shared_ptr<Task>)
 {
-	task_list.push_back(std::make_shared<Task>(t));
 }
 
-void Node::push(State& s)
+void Node::push(std::shared_ptr<State>)
 {
-	state_list.push_back(std::make_shared<State>(s));
 }
 
-void Node::push(Transition& t)
+void Node::push(std::shared_ptr<Transition>)
 {
-	transition_list.push_back(std::make_shared<Transition>(t));
 }
 
-void Node::push(Event_Declaration& ed)
+void Node::push(std::shared_ptr<Event_Declaration>)
 {
-	statement_list.push_back(std::make_shared<Event_Declaration>(ed));
-}
-
-void Node::push(State_Transitions& st)
-{
-	statement_list.push_back(std::make_shared<State_Transitions>(st));
-}
-
-void Node::set_goto(State& s)
-{
-	gotoState = std::make_shared<State>(s);
-}
-
-void Node::setName(std::string _name)
-{
-	name = _name;
-}
-
-void Node::setInitial()
-{
-	initial = true;
 }
