@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-05T10:05:25.245Z" agent="5.0 (Windows)" etag="8gKn_GFremt-EPyrno-x" version="13.8.9-1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-05T10:07:22.544Z" agent="5.0 (Windows)" etag="9oceWkR-Rx_GAPphlOzr" version="13.8.9-1" type="github">
   <diagram id="VAAiEscxtQo0bk0bTV3w" name="Page-1">
     <mxGraphModel dx="1021" dy="1123" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -262,13 +262,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="L1C7FRDIqEkgphXE-Wq0-7" value="Event_declaration" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="1290" y="1084" width="160" height="70" as="geometry" />
+          <mxGeometry x="1290" y="1084" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="L1C7FRDIqEkgphXE-Wq0-33" value="&lt;div align=&quot;left&quot;&gt;-event_list: vector&amp;lt;Event*&amp;gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="L1C7FRDIqEkgphXE-Wq0-7">
           <mxGeometry y="26" width="160" height="20" as="geometry" />
         </mxCell>
         <mxCell id="L1C7FRDIqEkgphXE-Wq0-42" value="&lt;div&gt;+push(Event*):void&lt;/div&gt;&lt;div&gt;+&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="L1C7FRDIqEkgphXE-Wq0-7">
-          <mxGeometry y="46" width="160" height="24" as="geometry" />
+          <mxGeometry y="46" width="160" height="34" as="geometry" />
         </mxCell>
         <mxCell id="L1C7FRDIqEkgphXE-Wq0-8" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="L1C7FRDIqEkgphXE-Wq0-7" target="L1C7FRDIqEkgphXE-Wq0-4">
           <mxGeometry x="-0.0582" y="1" width="160" relative="1" as="geometry">
