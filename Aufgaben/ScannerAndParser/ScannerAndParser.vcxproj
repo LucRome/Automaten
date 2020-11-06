@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ASTPrinter.cpp" />
     <ClCompile Include="ConsolePrinter.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="Event_Declaration.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="Transition.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ASTPrinter.h" />
     <ClInclude Include="ConsolePrinter.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="Event_Declaration.h" />

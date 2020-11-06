@@ -66,6 +66,9 @@
     <ClCompile Include="State.cpp">
       <Filter>Quelldateien\ParseTree</Filter>
     </ClCompile>
+    <ClCompile Include="ASTPrinter.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scanner.h">
@@ -112,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Headerdateien\ParseTree</Filter>
+    </ClInclude>
+    <ClInclude Include="ASTPrinter.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
