@@ -155,6 +155,7 @@
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="Tokenstruct.cpp" />
     <ClCompile Include="Transition.cpp" />
+    <ClCompile Include="z_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsolePrinter.h" />

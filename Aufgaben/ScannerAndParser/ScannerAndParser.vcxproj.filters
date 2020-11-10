@@ -69,6 +69,9 @@
     <ClCompile Include="Node.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="z_test.cpp">
+      <Filter>Headerdateien\ParseTree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scanner.h">
